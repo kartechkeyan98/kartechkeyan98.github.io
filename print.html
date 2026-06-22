@@ -1026,7 +1026,7 @@ by <span class="katex"><span class="katex-html" aria-hidden="true"><span class="
 in some analyses and just doesn't come back again, but this is much more
 than that.</p>
 <p>The use case comes about when instead of looking at adding up some given
-subspaces, you start looking at how a given subset can be broken down
+subspaces, you start looking at how a given subspace can be broken down
 into a subset sum (much better, a direct sum).</p>
 <p>For example [looking into the future for motivation here]:</p>
 <ol>
@@ -1127,7 +1127,7 @@ zero sum, hence by <span class="katex"><span class="katex-html" aria-hidden="tru
 <p>In the last sections, we discovered the <strong>intersection</strong> operation
 which allows us to create the largest contained subspace in a list of
 subspaces <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord text"><span class="mord">P-1.3.4 + Induction</span></span></span></span></span>, and the <strong>subset sum</strong> operation
-which creates the smallest containing subspace.</p>
+which creates the smallest containing subspace, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">P-1.4.1</span></span></span></span></span>.</p>
 <p>Notice that these form a <strong>greatest lower bound (glb)</strong>
 and <strong>least upper bound (lub)</strong> operations on subspaces, respectively.
 But lub and glb require some sort of ordering, which is what is
@@ -1214,6 +1214,30 @@ with two operations <strong>meet</strong><span class="katex"><span class="katex-
 </li>
 </ol>
 </blockquote>
+<p>Lattices also seem like one of those esoteric things that make a cameo
+and then never show their faces again, but look at the examples below
+and think again.</p>
+<p>Examples:</p>
+<ol>
+<li>
+<p><strong>Boolean Logic</strong>: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">({</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose">}</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">∧</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">∨</span><span class="mclose">)</span></span></span></span> where <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.75em;vertical-align:-0.1944em;"></span><span class="mord">∧</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">∨</span></span></span></span>
+denote <strong>logical AND</strong> &amp; <strong>logical OR</strong> respectively forms a lattice.
+Hence, the whole foundations of digital electronics and the building
+of digital circuits is grounded in Lattice theory.<br></p>
+</li>
+<li>
+<p><strong>Power Set</strong> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span> is a set. <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathcal" style="margin-right:0.08222em;">P</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">∩</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">∪</span><span class="mclose">)</span></span></span></span> forms
+a lattice, where <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.08222em;">P</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mclose">)</span></span></span></span> is the power set of <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span>. This is
+one of the simplest examples of algebraic lattices. The ordering
+that one can verify is <em><strong>subset inclusion</strong></em>.</p>
+</li>
+<li>
+<p><strong>Divisibility Lattice</strong> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathbb">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2583em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">gcd</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">lcm</span></span><span class="mclose">)</span></span></span></span>
+forms an algebraic lattice with usual ordering <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mrel">≤</span></span></span></span>.</p>
+</li>
+</ol>
+<p>Alot of the simple things in life form a lattice. It is one of those
+hidden structures you need to put some effort into finding.</p>
 <h3 id="properties-p-15"><a class="header" href="#properties-p-15">Properties [P-1.5]</a></h3>
 <p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.08222em;">V</span><span class="mopen">(</span><span class="mord mathbb">F</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathcal" style="margin-right:0.08222em;">V</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">+</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">⋅</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathbb">F</span><span class="mclose">)</span></span></span></span> is a
 vector space over <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6889em;"></span><span class="mord mathbb">F</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0968em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathcal" style="margin-right:0.09931em;">F</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8468em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mbin">+</span></span><span style="top:-3.1523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.0833em;"><span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7079em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mbin">⋅</span></span><span style="top:-3.0135em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></p>
