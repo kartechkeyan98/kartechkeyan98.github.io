@@ -8,49 +8,27 @@ html {
 
 
 /* ==========================================================
-   LARGE SCREENS
+   RESPONSIVE LAYOUT
    ========================================================== */
 
-@media (min-width: 1201px) {
+@media (min-width: 901px) {
 
     .page {
-        margin-right: 360px;
+
+        /* Reserve space for the Page TOC */
+        margin-right: clamp(240px, 22vw, 360px);
     }
 
     .content {
-        max-width: min(1000px, calc(100vw - 400px));
+
+        max-width: min(
+            1000px,
+            calc(100vw - clamp(280px, 24vw, 420px))
+        );
     }
+
 }
 
-
-/* ==========================================================
-   MEDIUM SCREENS (Laptop / Landscape Tablet)
-   ========================================================== */
-
-@media (max-width: 1200px) and (min-width: 901px) {
-
-    .page {
-        margin-right: 250px;
-    }
-
-    .content {
-        max-width: calc(100vw - 280px);
-    }
-
-    #page-toc {
-
-        display: block;
-
-        width: 210px;
-
-        right: 70px;
-    }
-}
-
-
-/* ==========================================================
-   SMALL SCREENS (Phone / Portrait Tablet)
-   ========================================================== */
 
 @media (max-width: 900px) {
 
@@ -63,9 +41,9 @@ html {
     }
 
     #page-toc {
-
         display: none;
     }
+
 }
 
 
@@ -100,6 +78,7 @@ html {
     );
 }
 
+
 /* ==========================================================
    PAGE TOC
    ========================================================== */
@@ -108,28 +87,45 @@ html {
 
     position: fixed;
 
-    top: 7rem;
-    right: 14rem;
+    top: clamp(6rem, 8vh, 9rem);
 
-    width: 280px;
+    right: clamp(110px, 5vw, 150px);
 
-    max-height: 85vh;
+    width: clamp(
+        200px,
+        15vw,
+        260px
+    );
+
+    max-height: calc(100vh - clamp(7rem, 9vh, 10rem));
 
     overflow-y: auto;
 
-    padding: 1rem;
+    padding: clamp(
+        0.65rem,
+        0.8vw,
+        1rem
+    );
 
     background: var(--bg);
 
     border: 1px solid var(--sidebar-border);
 
-    border-radius: 12px;
+    border-radius: clamp(
+        8px,
+        0.8vw,
+        12px
+    );
 
     box-shadow: 0 0 12px rgba(0,0,0,0.12);
 
     z-index: 5;
 
-    font-size: 1.3rem;
+    font-size: clamp(
+        0.95rem,
+        0.25vw + 0.9rem,
+        1.15rem
+    );
 
     line-height: 1.45;
 
@@ -143,13 +139,25 @@ html {
 
 .page-toc-title {
 
-    font-size: 1.4rem;
+    font-size: clamp(
+        1rem,
+        0.45vw + 0.9rem,
+        1.25rem
+    );
 
     font-weight: 700;
 
-    margin-bottom: 0.75rem;
+    margin-bottom: clamp(
+        0.5rem,
+        0.8vw,
+        0.8rem
+    );
 
-    padding-bottom: 0.5rem;
+    padding-bottom: clamp(
+        0.4rem,
+        0.6vw,
+        0.6rem
+    );
 
     border-bottom: 1px solid var(--sidebar-border);
 }
@@ -170,7 +178,11 @@ html {
 
 #page-toc li {
 
-    margin: 0.3rem 0;
+    margin: clamp(
+        0.2rem,
+        0.3vw,
+        0.35rem
+    ) 0;
 }
 
 #page-toc > ul > li {
@@ -180,14 +192,22 @@ html {
 
 #page-toc ul ul {
 
-    padding-left: 1.25rem;
+    padding-left: clamp(
+        0.8rem,
+        1.2vw,
+        1.4rem
+    );
 
     font-weight: normal;
 }
 
 #page-toc ul ul ul {
 
-    padding-left: 1.25rem;
+    padding-left: clamp(
+        0.8rem,
+        1.2vw,
+        1.4rem
+    );
 }
 
 
@@ -201,7 +221,9 @@ html {
 
     text-decoration: none;
 
-    transition: opacity 0.15s ease;
+    transition:
+        opacity 0.15s ease,
+        color 0.15s ease;
 }
 
 #page-toc a:hover {
@@ -224,7 +246,7 @@ html {
 
 
 /* ==========================================================
-   SCROLLBAR
+   PAGE TOC SCROLLBAR
    ========================================================== */
 
 #page-toc::-webkit-scrollbar {
@@ -238,3 +260,4 @@ html {
 
     background: rgba(127,127,127,0.35);
 }
+
