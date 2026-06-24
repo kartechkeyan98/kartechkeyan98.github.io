@@ -8,57 +8,51 @@ html {
 
 
 /* ==========================================================
-   DESKTOP LAYOUT
+   LARGE SCREENS
    ========================================================== */
 
 @media (min-width: 1201px) {
 
     .page {
-        margin-right: 320px;
+        margin-right: 360px;
     }
 
     .content {
-        max-width: min(1000px, calc(100vw - 360px));
+        max-width: min(1000px, calc(100vw - 400px));
     }
-
 }
 
 
 /* ==========================================================
-   TABLET LAYOUT
+   MEDIUM SCREENS (Laptop / Landscape Tablet)
    ========================================================== */
 
-@media (max-width: 1200px) and (min-width: 769px) {
+@media (max-width: 1200px) and (min-width: 901px) {
 
     .page {
-        margin-right: 240px;
+        margin-right: 250px;
     }
 
     .content {
-        max-width: calc(100vw - 260px);
+        max-width: calc(100vw - 280px);
     }
 
     #page-toc {
 
-        width: 220px;
+        display: block;
 
-        right: 0.5rem;
+        width: 210px;
 
-        font-size: 0.9rem;
+        right: 70px;
     }
-
-    .katex-display {
-        font-size: 0.95em;
-    }
-
 }
 
 
 /* ==========================================================
-   PHONE LAYOUT
+   SMALL SCREENS (Phone / Portrait Tablet)
    ========================================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
     .page {
         margin-right: 0;
@@ -69,13 +63,9 @@ html {
     }
 
     #page-toc {
+
         display: none;
     }
-
-    .katex-display {
-        font-size: 0.9em;
-    }
-
 }
 
 
@@ -102,6 +92,13 @@ html {
     padding-left: 1.5em !important;
 }
 
+.katex-display {
+    font-size: clamp(
+        0.8em,
+        0.2vw + 0.7em,
+        1em
+    );
+}
 
 /* ==========================================================
    PAGE TOC
@@ -111,7 +108,7 @@ html {
 
     position: fixed;
 
-    top: 4.5rem;
+    top: 7rem;
     right: 14rem;
 
     width: 280px;
