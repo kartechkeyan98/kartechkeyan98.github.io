@@ -5,7 +5,9 @@
 html {
     font-size: clamp(16px, 0.5vw + 15px, 20px);
 }
+html { scroll-behavior: smooth; }
 
+:where(h1, h2, h3, h4) { scroll-margin-top: 4rem; }
 
 /* ==========================================================
    RESPONSIVE LAYOUT
@@ -76,6 +78,12 @@ html {
         0.2vw + 0.7em,
         1em
     );
+}
+
+.katex-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.4em;   /* breathing room for the scrollbar */
 }
 
 
@@ -260,5 +268,53 @@ html {
     border-radius: 4px;
 
     background: rgba(127,127,127,0.35);
+}
+
+
+/* ==========================================================
+   ALGORITHM BOX
+   ========================================================== */
+
+/* shared callout base */
+blockquote.algorithm,
+blockquote.definition,
+blockquote.theorem,
+blockquote.lemma,
+blockquote.note {
+    margin: clamp(1.2rem, 2vw, 1.8rem) 0;
+    padding: clamp(0.8rem, 1.5vw, 1.3rem) clamp(1rem, 2vw, 1.6rem);
+    background: var(--quote-bg);
+    border: 1px solid var(--sidebar-border);
+    border-radius: clamp(8px, 0.8vw, 12px);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
+}
+
+/* accent edge per type */
+blockquote.algorithm  { border-left: 4px solid var(--links); }
+blockquote.definition { border-left: 4px solid #2e8b57; }  /* sea green   */
+blockquote.theorem    { border-left: 4px solid #4169e1; }  /* royal blue  */
+blockquote.lemma      { border-left: 4px solid #9370db; }  /* med. purple */
+blockquote.note       { border-left: 4px solid #f65a99bf; }  /* med. purple */
+
+/* Shadow Rules for dark backgrounds */
+.coal #page-toc,
+.navy #page-toc,
+.ayu #page-toc,
+.coal blockquote.algorithm,
+.navy blockquote.algorithm,
+.ayu blockquote.algorithm,
+.coal blockquote.definition,
+.navy blockquote.definition,
+.ayu blockquote.definition,
+.coal blockquote.theorem,
+.navy blockquote.theorem,
+.ayu blockquote.theorem,
+.coal blockquote.lemma,
+.navy blockquote.lemma,
+.ayu blockquote.lemma,
+.coal blockquote.note,
+.navy blockquote.note,
+.ayu blockquote.note {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.14);
 }
 
