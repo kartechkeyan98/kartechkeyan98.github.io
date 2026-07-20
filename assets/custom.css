@@ -289,6 +289,15 @@ blockquote.note {
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
 }
 
+blockquote.equations {
+    margin: clamp(1.2rem, 2vw, 1.8rem) 0;
+    padding: clamp(0.8rem, 1.5vw, 1.3rem) clamp(1rem, 2vw, 1.6rem);
+    background: var(--quote-bg);
+    border: 1px solid var(--sidebar-border);
+    border-radius: clamp(8px, 0.8vw, 12px);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.464);
+}
+
 /* accent edge per type */
 blockquote.algorithm  { border-left: 4px solid var(--links); }
 blockquote.definition { border-left: 4px solid #2e8b57; }  /* sea green   */
@@ -316,5 +325,11 @@ blockquote.note       { border-left: 4px solid #f65a99bf; }  /* med. purple */
 .navy blockquote.note,
 .ayu blockquote.note {
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.14);
+}
+
+.coal blockquote.equations,
+.navy blockquote.equations,
+.ayu blockquote.equations {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.515);
 }
 
