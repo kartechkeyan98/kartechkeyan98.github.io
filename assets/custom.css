@@ -333,3 +333,99 @@ blockquote.note       { border-left: 4px solid #f65a99bf; }  /* med. purple */
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.515);
 }
 
+/* ==========================================================
+   ALGORITHM BLOCK
+   ========================================================== */
+
+blockquote.algo {
+    --algo-accent: #0e7c86;   /* teal-cyan, readable on light themes */
+
+    margin: clamp(1.2rem, 2vw, 1.8rem) 0;
+    padding: clamp(0.8rem, 1.5vw, 1.3rem) clamp(1rem, 2vw, 1.6rem);
+    background: var(--quote-bg);
+    border: 1px solid var(--sidebar-border);
+    border-left: 4px solid var(--algo-accent);
+    border-radius: clamp(8px, 0.8vw, 12px);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
+}
+
+/* brighter cyan on dark themes */
+.coal blockquote.algo,
+.navy blockquote.algo,
+.ayu blockquote.algo {
+    --algo-accent: #4dd0e1;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.14);
+}
+
+/* caption */
+.algo-name {
+    color: var(--algo-accent);
+    font-weight: 700;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+/* Input / Output / Algorithm section headers */
+.algo-hd {
+    display: block;
+    margin: 0.9em 0 0.3em;
+    color: var(--algo-accent);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    opacity: 0.85;
+}
+
+/* step lists */
+blockquote.algo ol {
+    padding-left: 1.6em;
+    margin: 0.3em 0;
+}
+
+blockquote.algo li {
+    margin: 0.25em 0;
+    line-height: 1.6;
+}
+
+/* nested loop bodies get a guide rule */
+blockquote.algo ol ol {
+    margin: 0.35em 0 0.55em;
+    padding-left: 1.4em;
+    border-left: 2px solid var(--algo-accent);
+    border-left-color: color-mix(in srgb, var(--algo-accent) 45%, transparent);
+}
+
+/* keywords: for / do / end for / return */
+blockquote.algo strong {
+    color: var(--algo-accent);
+    font-weight: 700;
+}
+
+/* inline comments */
+blockquote.algo .cmt {
+    opacity: 0.65;
+    font-size: 0.88em;
+    font-style: italic;
+}
+
+blockquote.algo .cmt::before {
+    content: "# ";
+}
+
+/* dark themes: light glow instead of dark shadow */
+.coal blockquote.algo,
+.navy blockquote.algo,
+.ayu blockquote.algo {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.14);
+}
+
+blockquote.algo ol { list-style: none; counter-reset: step; padding-left: 1.6em; }
+blockquote.algo li { counter-increment: step; }
+blockquote.algo li::before {
+    content: counters(step, ".") ". ";
+    font-variant-numeric: tabular-nums;
+    opacity: 0.7;
+    margin-left: -1.6em;
+    display: inline-block;
+    width: 1.6em;
+}
