@@ -276,7 +276,6 @@ html { scroll-behavior: smooth; }
    ========================================================== */
 
 /* shared callout base */
-blockquote.algorithm,
 blockquote.definition,
 blockquote.theorem,
 blockquote.lemma,
@@ -299,7 +298,6 @@ blockquote.equations {
 }
 
 /* accent edge per type */
-blockquote.algorithm  { border-left: 4px solid var(--links); }
 blockquote.definition { border-left: 4px solid #2e8b57; }  /* sea green   */
 blockquote.theorem    { border-left: 4px solid #4169e1; }  /* royal blue  */
 blockquote.lemma      { border-left: 4px solid #9370db; }  /* med. purple */
@@ -309,9 +307,6 @@ blockquote.note       { border-left: 4px solid #f65a99bf; }  /* med. purple */
 .coal #page-toc,
 .navy #page-toc,
 .ayu #page-toc,
-.coal blockquote.algorithm,
-.navy blockquote.algorithm,
-.ayu blockquote.algorithm,
 .coal blockquote.definition,
 .navy blockquote.definition,
 .ayu blockquote.definition,
@@ -349,7 +344,7 @@ blockquote.algo {
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
 }
 
-/* brighter cyan on dark themes */
+/* brighter cyan + light glow on dark themes */
 .coal blockquote.algo,
 .navy blockquote.algo,
 .ayu blockquote.algo {
@@ -357,7 +352,9 @@ blockquote.algo {
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.14);
 }
 
-/* caption */
+
+/* ---------- caption & section headers ---------- */
+
 .algo-name {
     color: var(--algo-accent);
     font-weight: 700;
@@ -365,7 +362,6 @@ blockquote.algo {
     text-decoration: underline;
 }
 
-/* Input / Output / Algorithm section headers */
 .algo-hd {
     display: block;
     margin: 0.9em 0 0.3em;
@@ -373,59 +369,64 @@ blockquote.algo {
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 3px;
-    opacity: 0.85;
 }
 
-/* step lists */
+
+/* ---------- step lists (ordered only) ---------- */
+
 blockquote.algo ol {
-    padding-left: 1.6em;
+    padding-left: 1.8em;
     margin: 0.3em 0;
 }
 
-blockquote.algo li {
+blockquote.algo ol > li {
     margin: 0.25em 0;
     line-height: 1.6;
+}
+
+blockquote.algo ol > li::marker {
+    color: var(--algo-accent);
+    font-weight: 600;
 }
 
 /* nested loop bodies get a guide rule */
 blockquote.algo ol ol {
     margin: 0.35em 0 0.55em;
-    padding-left: 1.4em;
-    border-left: 2px solid var(--algo-accent);
-    border-left-color: color-mix(in srgb, var(--algo-accent) 45%, transparent);
+    padding-left: 1.5em;
+    border-left: 2px solid
+        color-mix(in srgb, var(--algo-accent) 45%, transparent);
 }
 
-/* keywords: for / do / end for / return */
-blockquote.algo strong {
+
+/* ---------- input / output bullet lists ---------- */
+
+blockquote.algo ul {
+    padding-left: 1.4em;
+    margin: 0.3em 0;
+}
+
+blockquote.algo ul > li {
+    margin: 0.2em 0;
+    line-height: 1.6;
+}
+
+
+/* ---------- keywords: for / do / end for / return ---------- */
+
+blockquote.algo ol > li > strong {
     color: var(--algo-accent);
     font-weight: 700;
 }
 
-/* inline comments */
+
+/* ---------- inline comments ---------- */
+
 blockquote.algo .cmt {
-    opacity: 0.65;
+    opacity: 0.7;
     font-size: 0.88em;
     font-style: italic;
 }
 
 blockquote.algo .cmt::before {
     content: "# ";
-}
-
-/* dark themes: light glow instead of dark shadow */
-.coal blockquote.algo,
-.navy blockquote.algo,
-.ayu blockquote.algo {
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.14);
-}
-
-blockquote.algo ol { list-style: none; counter-reset: step; padding-left: 1.6em; }
-blockquote.algo li { counter-increment: step; }
-blockquote.algo li::before {
-    content: counters(step, ".") ". ";
-    font-variant-numeric: tabular-nums;
-    opacity: 0.7;
-    margin-left: -1.6em;
-    display: inline-block;
-    width: 1.6em;
 }
