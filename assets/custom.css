@@ -417,6 +417,14 @@ blockquote.algo ol > li > strong {
     color: var(--algo-accent);
     font-weight: 700;
 }
+blockquote.algo ol li strong {
+    color: var(--algo-accent);
+    font-weight: 700;
+}
+
+blockquote.algo ol > li > p {
+    margin: 0.25em 0;
+}
 
 
 /* ---------- inline comments ---------- */
@@ -429,4 +437,8 @@ blockquote.algo .cmt {
 
 blockquote.algo .cmt::before {
     content: "# ";
+}
+
+blockquote.algo .cmt strong {
+    color: inherit;
 }
