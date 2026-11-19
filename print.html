@@ -649,7 +649,7 @@ solidifies the uniqueness of that.</p>
 <p>Almost all properties from <strong>P-1.1.1 - P-1.1.7</strong> are the things which are used very often when dealing with reals and complex numebers. The only non-trivial property is the last one, which states that 0 cannot have a multiplicative inverse. More on that in the next subsection.</p>
 <h2 id="group-theoretic-build-up-to-fields"><a class="header" href="#group-theoretic-build-up-to-fields">Group Theoretic Build-up to Fields</a></h2>
 <p><strong>1. One Operation</strong> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">+</span><span class="mclose">)</span></span></span></span></p>
-<pre><code class="language-mermaid">%%{init: {"flowchart": {"defaultRenderer": "elk"}}}%%
+<pre class="mermaid">%%{init: {"flowchart": {"defaultRenderer": "elk"}}}%%
 flowchart TB
     subgraph R1[" "]
         direction LR
@@ -668,9 +668,10 @@ flowchart TB
     style R1 fill:none,stroke:none
     style R2 fill:none,stroke:none
     style R3 fill:none,stroke:none
-</code></pre>
+</pre>
+
 <p><strong>2. Two Operations</strong> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">+</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">×</span><span class="mclose">)</span></span></span></span></p>
-<pre><code class="language-mermaid">%%{init: {"flowchart": {"defaultRenderer": "elk"}}}%%
+<pre class="mermaid">%%{init: {"flowchart": {"defaultRenderer": "elk"}}}%%
 flowchart TB
     subgraph R1[" "]
         direction LR
@@ -683,7 +684,8 @@ flowchart TB
     B --&gt; C
     style R1 fill:none,stroke:none
     style R2 fill:none,stroke:none
-</code></pre>
+</pre>
+
 <p>This is the build-up. In the two operation case, notice that <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4445em;"></span><span class="mord">⋅</span></span></span></span> operation induces a group on <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">0</span><span class="mclose">}</span></span></span></span>. Why not on <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span></span></span> itself? That comes from:</p>
 <!-- #region Property P-1.1 -->
 <blockquote class="lemma">
@@ -4835,6 +4837,8 @@ appropriately.</li>
         <script src="assets/reset-numbering-89794fe8.js"></script>
         <script src="assets/page-toc-606998a7.js"></script>
         <script src="assets/page-toc-control-8d14b87b.js"></script>
+        <script src="mermaid-eefea253.min.js"></script>
+        <script src="mermaid-init-53b67c53.js"></script>
 
         <script>
         window.addEventListener('load', function() {
